@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+*{box-sizing: border-box;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 1em;
+}
+.top_left{
+    grid-column: 2 /3;
+    grid-row: 1/2;
+}
+.top_middle{
+    grid-column: 3 /4;
+    grid-row: 1 /2;
+    align-self: flex-end;
+}
+.top_right{
+    grid-column: 4 /5;
+    grid-row: 1 /2;
+}
+.bottom_left{
+    grid-column: 2/ 3;
+    grid-row: 2/ 3;
+}
+.bottom_middle{
+    grid-column: 3 /4;
+    grid-row: 2 /3;
+}
+.bottom_right{
+    grid-column: 4/ 5;
+    grid-row: 2/ 3;
+}
+    
+h3{
+    margin: 0px 0px 7px;
+    font-size: 25px;
+}
+p{
+    color: #4ca6ff;
+    font-size: 20px;
+    margin: 0;
+}
+.small{
+    color: gray;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.top_right p{
+    margin-bottom: 5px;
+}
+button{
+    background-color: #d8d8d8;
+    color: black;
+    width: 140px;
+    height: 38px;
+    border-radius: 5px;
+    border: 0px;
+}
+            /* mobile */
+
+@media screen and (max-width: 800px) {
+    .main{
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-template-rows: repeat(5, 0.8fr);
+        grid-column-gap: 1em;
+    }
+    .top_middle {
+        grid-column: 2 /3;
+        grid-row: 3/ 4;
+        justify-self: flex-start;
+        align-self: flex-start;
+
+    }
+    .bottom_middle{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 4/ 5;
+    justify-content: flex-start;
+    align-self: flex-start;
+    }
+    .top_right{
+    grid-column: 3 /4;
+    grid-row: 1 /2;
+    }
+    .bottom_right{
+    grid-column: 3 /4;
+    grid-row: 2 /3;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .main{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 1em;
+    }
+    .top_right{
+    grid-column: 2/3;
+    grid-row: 5/ 6;
+    }
+    .bottom_right{
+    grid-column: 2/3;
+    grid-row: 5/ 6;
+    justify-self: flex-start;
+    align-self: flex-end;
+    }
+}
